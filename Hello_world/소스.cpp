@@ -8,4 +8,8 @@ int main() {
 	}
 	return 0;
 	//hello world
+
+	for (int i{ 0 }; i < 5; i++) {
+		cout << ":D ";
+	}
 }
