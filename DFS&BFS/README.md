@@ -17,7 +17,7 @@ visited를 별도로 만드는 대신 정점에 상태값을 기입해서 다른
 
 유사 문제: [단지번호붙이기](https://www.acmicpc.net/problem/2667), [유기농 배추](https://www.acmicpc.net/problem/1012)
 
-```
+```cpp
 for (int i = 0; i < m; i++) {
     for (int j = 0; j < n; j++) {
         //매 미방문 칸마다 BFS
