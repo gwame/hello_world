@@ -7,6 +7,7 @@ A.K.A. 동적 계획법
 |:---|:---:|:---:|
 |[가장 큰 정사각형](https://www.acmicpc.net/problem/1915)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|[</>](./BOJ_1915_가장%20큰%20정사각형.cpp)| [➡️](#boj-1915-가장-큰-정사각형) |
 |[출근 경로](https://www.acmicpc.net/problem/5569)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|[</>](./BOJ_5569_출근%20경로.cpp)| [➡️](#boj-5569-출근-경로) |
+|[오르막 수](https://www.acmicpc.net/problem/11057)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|[</>](./BOJ_11057_오르막%20수.cpp)| [➡️](#boj-11057-오르막-수) |
 ## 문제 상세
 #### BOJ 1915 가장 큰 정사각형
 `memo[i][j]`: 해당 칸을 최우하단으로 하는 가장 큰 정사각형의 **한 변 길이**  
@@ -60,3 +61,8 @@ dp[i][j][2] = (dp[i][j - 1][1] + dp[i][j - 1][2]) % d;
 dp[i][j][3] = dp[i - 1][j][2]; // 앞에서 'en'으로 끝났으면 지금 'ne'가 불가
 ```
 추가로 $(i, j)$의 답과 $(j, i)$의 답이 동일하므로 (대각선 대칭) dp배열에서 $i≤j$인 경우만 참조하도록 했음  
+
+#### BOJ 11057 오르막 수
+`dp[i][j]`: 길이가 $i$면서 $j$로 끝나는 오르막 수의 개수  
+$$dp(i,\,j) = \begin{cases}1&\text{if}\;i=1, \\ \sum\limits_{k=0}^j\,dp(i-1,\,j)&\text{if}\;i>1\end{cases}$$
+간단한 dp인데 LaTeX로 수식 써보고싶어서 기록함ㅎㅎ
