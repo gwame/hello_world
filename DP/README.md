@@ -64,5 +64,7 @@ dp[i][j][3] = dp[i - 1][j][2]; // 앞에서 'en'으로 끝났으면 지금 'ne'�
 
 #### BOJ 11057 오르막 수
 `dp[i][j]`: 길이가 $i$면서 $j$로 끝나는 오르막 수의 개수  
-$$dp(i,\,j) = \begin{cases}1&\text{if}\;i=1, \\ \sum\limits_{k=0}^j\,dp(i-1,\,j)&\text{if}\;i>1\end{cases}$$
+```math
+dp(i,\,j) = \begin{cases}1&\text{if}\;i=1, \\ \sum\limits_{k=0}^j\,dp(i-1,\,j)&\text{if}\;i>1\end{cases}
+```
 간단한 dp인데 LaTeX로 수식 써보고싶어서 기록함ㅎㅎ
