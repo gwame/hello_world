@@ -12,6 +12,7 @@ visited를 별도로 만드는 대신 정점에 상태값을 기입해서 다른
 |:---|:---:|:---:|
 |[영역 구하기](https://www.acmicpc.net/problem/2583)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|[</>](./BOJ_2583_영역%20구하기.cpp)| [➡️](#boj-2583-영역-구하기)|
 |[벽 부수고 이동하기](https://www.acmicpc.net/problem/2206)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|[</>](./BOJ_2206_벽%20부수고%20이동하기.cpp)| [➡️](#boj-2206-벽뿌이)|
+|[알고스팟](https://www.acmicpc.net/problem/1261)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|[</>](./BOJ_1261_알고스팟.cpp)| [➡️](#boj-1261-알고스팟)|
 ## 문제 상세
 #### BOJ 2583 영역 구하기
 구분되는 영역 개수와 각각의 면적 구하기  
@@ -94,3 +95,8 @@ int bfs() {
 	return -1;
 }
 ```
+
+#### BOJ 1261 알고스팟
+방문처리에 벽뿌순횟수를 카운트한다는 발상까지는 좋았지만 최단거리 문제임에도 불구하고 BFS가 아니라 DFS로 푼 결과 684ms라는 수행시간이 찍혔다! 다른 C++코드는 거의 0~4ms 수준이던데...😕  
+왜 그런 선택을 했을까? BFS를 안 떠올린건 아니지만 벽의 존재로 인해 $(N, M)$칸에 최초로 도착했을 때가 최소 벽파괴를 보장하진 않을 거라고 생각했었다. 그래서 'DFS 주루룩 돌리고 `visited[N][M]` 최솟값 가져오면 되겠지?' 라는 나이브한 선택을 했던 것이다   
+BFS에 deque를 사용한 풀이에서는 빈칸이면 큐의 맨 앞에, 벽칸이면 맨 뒤에 삽입하도록 구현한 것을 보았다. **벽 덜뿌시고 도착하기**가 목적이니까 이렇게 우선순위 높은 행동은 deque로 새치기시키면 된다는 묘수가 있었다😯
