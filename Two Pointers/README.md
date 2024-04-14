@@ -8,7 +8,7 @@ $O(N²)$ 걸릴걸 리니어하게 바꿔주는 매직
 |[고냥이](https://www.acmicpc.net/problem/16472)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|[</>](./BOJ_16472_고냥이.cpp)| [➡️](#boj-16472-고냥이) |
 ## 문제 상세
 #### BOJ 16472 고냥이
-$abbcaccba$라는 문자열을 `pair<char,int>` 배열에 $a1\;b2\;c1\;a1\;c2\;b1\;a1$ 식으로 압축함  
+$abbcaccba$라는 문자열을 `pair<char,int>` 배열에 $a1\ b2\ c1\ a1\ c2\ b1\ a1$ 식으로 압축함  
 그리고 포함한 문자 종류 관리를 위해 `map<char, int>` 사용  
 원래 `set`을 썼는데 이러면 $cacc$같은 케이스에서 왼쪽 포인터 옮기면서 c를 다 제거한걸로 인식되니까 개수도 같이 관리하기 위해 맵을 썼다  
 (문자 자체가 몇 자 들어있는지 쓸 필욘 없고 pair덩어리 개수를 넣으면 됨)  
