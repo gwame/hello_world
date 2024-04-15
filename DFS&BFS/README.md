@@ -128,7 +128,7 @@ BFS에 deque를 사용한 풀이에서는 빈칸이면 큐의 맨 앞에, 벽칸
 BFS, DFS 기본기 부족을 느꼈다...더 연습 필요
 
 #### BOJ 19641 중집모
-<img src="https://github.com/gwame/hello_world/assets/39578124/6d0b4644-2537-4c80-b9bd-c9c13d10c479" width="75%">  
+<img src="https://github.com/gwame/hello_world/assets/39578124/6d0b4644-2537-4c80-b9bd-c9c13d10c479" width="50%">  
 
 이런 식으로 노드에 번호를 매기면 된다. 딱 봐도 DFS  
 **번호가 가장 낮은 노드부터 오름차순으로 방문**해야 하므로 간선 sort도 해주었다  
