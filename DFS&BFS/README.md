@@ -14,10 +14,10 @@ visited를 별도로 만드는 대신 정점에 상태값을 기입해서 다른
 |[벽 부수고 이동하기](https://www.acmicpc.net/problem/2206)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|[</>](./BOJ_2206_벽%20부수고%20이동하기.cpp)| [➡️](#boj-2206-벽뿌이)|
 |[알고스팟](https://www.acmicpc.net/problem/1261)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|[</>](./BOJ_1261_알고스팟.cpp)| [➡️](#boj-1261-알고스팟)|
 |[DSLR](https://www.acmicpc.net/problem/9019)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|[</>](./BOJ_9019_DSLR.cpp)| [➡️](#boj-9019-dslr)|
+|[중첩 집합 모델](https://www.acmicpc.net/problem/19641)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|[</>](./BOJ_19641_중첩%20집합%20모델.cpp)| [➡️](#boj-19641-중집모)|
 ## 문제 상세
 #### BOJ 2583 영역 구하기
 구분되는 영역 개수와 각각의 면적 구하기  
-
 유사 문제: [단지번호붙이기](https://www.acmicpc.net/problem/2667), [유기농 배추](https://www.acmicpc.net/problem/1012)
 
 ```cpp
@@ -126,3 +126,11 @@ BFS에 deque를 사용한 풀이에서는 빈칸이면 큐의 맨 앞에, 벽칸
 	 > [BFS로 한 단계 나아갈 때마다 기존의 path를 받아서 이어붙이면 그 길이에 비례하는 시간이 매번 걸려서 비효율적입니다. string을 만들고 지우는 것 자체가 꽤 무거운 연산이기도 합니다. BFS의 경로를 추적할 때 완성품을 보내주지 말고, 이전 상태가 어디였고 거기서 무슨 연산을 한 건지만 알려주면 BFS가 끝난 후에 경로를 역추적해서 재구성을 할 수 있습니다. string 대신에 char을 쓸 수 있어서 더 가볍습니다.](https://www.acmicpc.net/board/view/28910)
 
 BFS, DFS 기본기 부족을 느꼈다...더 연습 필요
+
+#### BOJ 19641 중집모
+<img src="https://github.com/gwame/hello_world/assets/39578124/6d0b4644-2537-4c80-b9bd-c9c13d10c479" width="75%">  
+
+이런 식으로 노드에 번호를 매기면 된다. 딱 봐도 DFS  
+**번호가 가장 낮은 노드부터 오름차순으로 방문**해야 하므로 간선 sort도 해주었다  
+구간 안에 자손이 들어가는 형태라 $(right-left-1)/2 =$ 자손의 수, $left+1=right$면 리프노드라는 특징이 있음  
+이런 표현 방식을 응용해서 *오일러 경로 테크닉(Euler Tour Technique)* 이란 걸 쓸 수 있다고 한다. 세그먼트 트리와 관련 있는 개념인듯
