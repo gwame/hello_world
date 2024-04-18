@@ -8,6 +8,7 @@ A.K.A. 동적 계획법
 |[가장 큰 정사각형](https://www.acmicpc.net/problem/1915)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|[</>](./BOJ_1915_가장%20큰%20정사각형.cpp)| [➡️](#boj-1915-가장-큰-정사각형) |
 |[출근 경로](https://www.acmicpc.net/problem/5569)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|[</>](./BOJ_5569_출근%20경로.cpp)| [➡️](#boj-5569-출근-경로) |
 |[오르막 수](https://www.acmicpc.net/problem/11057)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|[</>](./BOJ_11057_오르막%20수.cpp)| [➡️](#boj-11057-오르막-수) |
+|[RGB거리 2](https://www.acmicpc.net/problem/17404)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|[</>](./BOJ_17404_RGB거리%202.cpp)| [➡️](#boj-17404-rgb거리-2) |
 ## 문제 상세
 #### BOJ 1915 가장 큰 정사각형
 `memo[i][j]`: 해당 칸을 최우하단으로 하는 가장 큰 정사각형의 **한 변 길이**  
@@ -68,3 +69,9 @@ dp[i][j][3] = dp[i - 1][j][2]; // 앞에서 'en'으로 끝났으면 지금 'ne'�
 dp(i,\,j) = \begin{cases}1&\text{if}\;i=1, \\ \sum\limits_{k=0}^j\,dp(i-1,\,j)&\text{if}\;i>1\end{cases}
 ```
 간단한 dp인데 LaTeX로 수식 써보고싶어서 기록함ㅎㅎ
+
+#### BOJ 17404 RGB거리 2
+[RGB거리](https://www.acmicpc.net/problem/1149)와의 차이는 마지막 집과 처음 집도 색깔이 달라야 한다는 점  
+DP배열 3배로해서 처음 집 색깔을 기억한채로 쌓아나가면 된다  
+그리고 마지막 집에서 최솟값 따질때 처음집색==막집색인 케이스 스킵해버리면 됨
+
